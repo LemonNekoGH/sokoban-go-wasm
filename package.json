@@ -1,0 +1,21 @@
+{
+  "name": "sokoban-go-wasm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LemonNekoGH/sokoban-go-wasm.git",
+  "author": "LemonNeko <chheese048@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build-wasm": "cross-env GOARCH=wasm GOOS=js go build -o build/main.wasm src/go/main/main.go",
+    "serve": "yarn build-wasm && webpack serve",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.0"
+  }
+}
