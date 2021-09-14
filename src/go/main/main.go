@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"honnef.co/go/js/dom/v2"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	document := dom.GetWindow().Document()
+	body := document.QuerySelector("body")
+
+	helloWorldDiv := document.CreateElement("div")
+	helloWorldDiv.SetInnerHTML("Hello World")
+	body.AppendChild(helloWorldDiv)
 }

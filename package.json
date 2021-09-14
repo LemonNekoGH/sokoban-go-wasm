@@ -6,7 +6,7 @@
   "author": "LemonNeko <chheese048@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build-wasm": "cross-env GOARCH=wasm GOOS=js go build -o build/main.wasm src/go/main/main.go",
+    "build-wasm": "cd src/go && cross-env GOARCH=wasm GOOS=js go build -o ../../build/main.wasm main/main.go",
     "serve": "yarn build-wasm && webpack serve",
     "build": "webpack"
   },
